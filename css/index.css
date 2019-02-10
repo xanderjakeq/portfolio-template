@@ -221,8 +221,7 @@ section div h2 {
   }
 }
 #intro {
-  min-height: fit-content;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -262,7 +261,7 @@ section div h2 {
   transition-property: all;
 }
 #intro .portfolio div {
-  min-height: fit-content;
+  min-height: auto;
 }
 #intro .portfolio div,
 #intro .portfolio div h2 {
