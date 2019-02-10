@@ -1,0 +1,241 @@
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button{
+	background: none;
+	border:none;
+
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+// Variables
+@main-font-stack: 'Courier New', Courier, monospace;
+@secondary-font-stack: 'Montserrat', sans-serif;
+@header-height: 40px;
+
+@project-height-mobile: 250px;
+
+@project-height-desktop: 350px;
+
+
+// mixins
+
+.set-flex(@direction, @justify-content, @align-items){
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify-content;
+	align-items: @align-items;
+}
+
+.fullwidth(){
+	width: 100%;
+}
+
+.portfolio-height(@numberOfProjects){
+	height: @project-height-mobile * @numberOfProjects;
+	@media (min-width: 800px){
+		height: @project-height-desktop * (@numberOfProjects/2);
+	}
+}
+
+
+
+html, body {
+	height: 100%;
+	font-family: @main-font-stack;
+	scroll-behavior: smooth;
+}
+
+h1{
+	font-size: 2.5rem;
+}
+h2{
+	font-size: 1.5rem;
+}
+p,li{
+	font-family: @secondary-font-stack;
+	font-size: 1rem;
+}
+
+li{
+	list-style: circle;
+	margin: 10px 0;
+}
+
+.container{
+	.fullwidth;
+	.set-flex(column, space-between, center);
+	font-size: 1.4rem;
+}
+
+header{
+	.fullwidth;
+	height: @header-height;
+	position: fixed;
+	top: 0;
+	background-color: cadetblue;
+	nav{
+		height: 100%;
+		.set-flex(row,space-evenly, center);
+		a{
+			text-decoration: none;
+			color: white;
+			font-size: 1.2rem;
+			&:hover{
+				color: black;
+				transition-duration: 300ms;
+			}
+		}
+	}
+}
+
+section{
+	h1{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	padding: @header-height+5 10px;
+	.fullwidth;
+	height: min-content;
+	border-bottom: 1px solid black;
+	
+	div{
+		.fullwidth;
+		min-height: 50%;
+		margin-top: 20px;
+		.set-flex(column, center, center);
+		h2{
+			font-size: 2rem;
+			margin-bottom: 20px;
+		}
+	}
+
+	@media screen and (min-width: 500px){
+		width: 500px;
+	}
+}
+
+#intro {
+	min-height: fit-content;
+	height: 100vh;
+	.set-flex(column,space-evenly,center);
+	
+	h1{
+		text-align: right;
+	}
+	
+	img {
+		max-width: 30%;
+		border-radius: 50%;
+	}
+
+	a{
+		text-decoration: none;
+		border: 1px solid black;
+		height: min-content;
+		cursor: pointer;
+		margin-top: 20px;
+		padding: 5px;
+		&:hover, &:active{
+			background-color: black;
+			color: white;
+			transition-duration: 300ms;
+		}
+	}
+
+	.portfolio{
+		min-height: 0;
+		.set-flex(column,space-evenly,center);
+		height: 0;
+		overflow: hidden;
+
+		width: 70vw;
+
+		transition-duration: 1s;
+		transition-property: all;
+		div{
+			min-height: fit-content;
+			&,h2{
+				margin: 0;
+			}
+
+			@media (min-width: 500px){
+				width: 50%;
+			}
+		}
+		img{
+			border-radius: unset;
+			max-width: 100%;
+			height: auto;
+		}
+
+		@media (min-width: 800px) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			
+		}
+	}
+
+	.active{
+		.portfolio-height(6)
+	}
+	
+}
+
+footer{
+	text-align: center;
+	p{
+		margin: 20px 0;
+	}
+}
