@@ -1,6 +1,6 @@
 const portfolioDiv = document.querySelector('.portfolio')
-const workButton = document.querySelector('.workButton')
+const worksButton = document.querySelector('.worksButton')
 
-workButton.addEventListener('click', (e) => {
+worksButton.addEventListener('click', (e) => {
     portfolioDiv.classList.toggle('active')
 })

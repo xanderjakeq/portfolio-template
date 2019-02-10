@@ -105,7 +105,8 @@ h2{
 }
 p,li{
 	font-family: @secondary-font-stack;
-	font-size: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 li{
@@ -149,7 +150,11 @@ section{
 	.fullwidth;
 	height: min-content;
 	border-bottom: 1px solid black;
-	
+	a{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 	div{
 		.fullwidth;
 		min-height: 50%;
@@ -180,7 +185,7 @@ section{
 		border-radius: 50%;
 	}
 
-	a{
+	#a{
 		text-decoration: none;
 		border: 1px solid black;
 		height: min-content;
@@ -234,8 +239,9 @@ section{
 }
 
 footer{
-	text-align: center;
+    text-align: center;
+    
 	p{
 		margin: 20px 0;
-	}
+    }
 }
