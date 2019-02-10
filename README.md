@@ -1,5 +1,7 @@
 # Simple Portfolio Template
 
+Here's a [Preview](https://xanderjakeq.github.io/portfolioTemplate/)
+
 ## Adding Projects
 
 Copy and paste project dive
