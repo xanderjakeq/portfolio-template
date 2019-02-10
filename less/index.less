@@ -62,7 +62,9 @@ button{
 // Variables
 @main-font-stack: 'Courier New', Courier, monospace;
 @secondary-font-stack: 'Montserrat', sans-serif;
+
 @header-height: 40px;
+@header-bg: cadetblue;
 
 @project-height-mobile: 250px;
 
@@ -125,7 +127,7 @@ header{
 	height: @header-height;
 	position: fixed;
 	top: 0;
-	background-color: cadetblue;
+	background-color: @header-bg;
 	nav{
 		height: 100%;
 		.set-flex(row,space-evenly, center);
