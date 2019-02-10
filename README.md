@@ -1,4 +1,4 @@
-# My Portfolio
+# Simple Portfolio Template
 
 ## Adding Projects
 
