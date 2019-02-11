@@ -4,7 +4,7 @@ Here's a [Preview](https://xanderjakeq.github.io/portfolioTemplate/)
 
 ## Adding Projects
 
-Copy and paste project dive
+Copy and paste project div
 
     <div>
         <img src="./images/kenLog.png" alt="kenLog screenshot">
